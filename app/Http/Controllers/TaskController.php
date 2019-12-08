@@ -52,7 +52,7 @@ class TaskController extends Controller
         $task->nama = $nama;
         $task->keterangan = $keterangan;
         $task->status = 'tersedia';
-        $task->done = 1;
+        $task->done = 0;
         $task->tanggal_mulai = $tanggal_mulai;
         $task->tanggal_target = $tanggal_target;
         $task->project_id = $id;
@@ -81,7 +81,9 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task = Task::find($id);
+        // dd($task);
+        return view('tasks.update', compact('task'));
     }
 
     /**
@@ -93,7 +95,25 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = Task::find($id);
+
+        $validasi = $request->validate([
+            'nama' => 'required|max:255',
+            'keterangan' => 'required',
+            'tanggal_mulai' => 'required',
+            'tanggal_target' => 'required'
+        ]);
+
+        $project_id = $request['project_id'];
+
+        $task->nama = $request['nama'];
+        $task->keterangan = $request['keterangan'];
+        $task->tanggal_mulai = $request['tanggal_mulai'];
+        $task->tanggal_target = $request['tanggal_target'];
+        $task->updated_at = now();
+        $task->save();
+
+        return redirect()->route('projects.id', [$project_id]);
     }
 
     /**
@@ -114,6 +134,8 @@ class TaskController extends Controller
     {
         $task = Task::find($id);
         $task->status = 'tersedia';
+        $task->tanggal_selesai = null;
+        $task->done = 0;
         $task->updated_at = now();
         $task->save();
 
@@ -125,6 +147,7 @@ class TaskController extends Controller
         $task = Task::find($id);
         $task->status = 'dikerjakan';
         $task->tanggal_selesai = null;
+        $task->done = 0;
         $task->updated_at = now();
         $task->save();
 
@@ -136,6 +159,7 @@ class TaskController extends Controller
         $task = Task::find($id);
         $task->status = 'selesai';
         $task->tanggal_selesai = now();
+        $task->done = 1;
         $task->updated_at = now();
         $task->save();
 
