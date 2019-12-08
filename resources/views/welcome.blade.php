@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>My Task - Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -48,7 +48,7 @@
                 font-size: 84px;
             }
             .subtitle {
-                font-size: 34px;
+                font-size: 18px;
             }
 
             .links > a {
@@ -85,7 +85,7 @@
             <div class="content">
                 <div class="subtitle">The first time using Laravel and Heroku</div>
                 <div class="title m-b-md">
-                    My Taks with Heroku
+                    My Task
                 </div>
 
                 <div class="links">
