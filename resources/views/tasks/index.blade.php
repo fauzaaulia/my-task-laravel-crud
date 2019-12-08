@@ -10,8 +10,8 @@
 <div class="card">
     <h4 class="card-header text-white bg-dark">Task</h4>
     <div class="card-body">
-        <div class="row">
-            <div class="col-4">
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col mb-4">
                 <div class="card ">
                     <h5 class="card-header text-white bg-primary">Tersedia</h5>
                     <div class="card-body">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col mb-4">
                 <div class="card">
                     <h5 class="card-header text-white bg-warning">Dikerjakan</h5>
                     <div class="card-body">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col mb-4">
                 <div class="card">
                     <h5 class="card-header text-white bg-success">Selesai</h5>
                     <div class="card-body">
