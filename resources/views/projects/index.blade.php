@@ -32,8 +32,8 @@
                 <td>{{$project['tanggal_target']}}</td>
                 <td>{{$project['tanggal_selesai']}}</td>
                 <td>
-                    <a href="{{route('projects.edit', $project['id'])}}" role="button" class="btn btn-primary btn-sm">Edit</a>
                     <form action="{{route('projects.destroy',$project['id'])}}" method="post">
+                        <a href="{{route('projects.edit', $project['id'])}}" role="button" class="btn btn-primary btn-sm">Edit</a>
                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                         @method('delete')
                         @csrf

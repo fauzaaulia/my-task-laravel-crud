@@ -96,8 +96,8 @@
                 <td>{{$task['tanggal_target']}}</td>
                 <td>{{$task['tanggal_selesai']}}</td>
                 <td>
-                    <a href="{{route('tasks.edit', $task['id'])}}" role="button" class="btn btn-primary btn-sm">Edit</a>
                     <form action="{{route('tasks.destroy',$task['id'])}}" method="post">
+                        <a href="{{route('tasks.edit', $task['id'])}}" role="button" class="btn btn-primary btn-sm">Edit</a>
                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                         @method('delete')
                         @csrf
