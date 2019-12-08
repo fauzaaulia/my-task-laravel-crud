@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    My Taks
+                    My Taks with Heroku
                 </div>
 
                 <div class="links">
