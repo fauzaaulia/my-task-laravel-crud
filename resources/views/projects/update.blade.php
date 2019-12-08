@@ -16,7 +16,7 @@
 
 <div class="row justify-content-center">
     <div class="col-6">
-        <form method="post" action="{{route('projects.update',$project['id'])}}" >
+        <form method="post" action="{{ route('projects.update',$project['id']) }}" >
             @method('put')
             @csrf
             <div class="form-group">
