@@ -26,7 +26,11 @@
                         @endif
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-primary my-2" role="button" href="{{ route('tasks.create') }}">Tambah Task</a>
+                        <!-- Button trigger modal tambah task -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahTask">
+                                Tambah Task
+                        </button>
+                        {{-- <a class="btn btn-primary my-2" role="button" href="{{ route('tasks.create') }}">Tambah Task</a> --}}
                     </div>
                 </div>
             </div>
@@ -69,16 +73,6 @@
 
 <hr>
 
-{{-- <div class="row justify-content-between">
-    <div class="col-auto mr-auto">
-        <a class="btn btn-outline-primary my-2" role="button" href="{{route('projects.index')}}">Kembali</a>
-    </div>
-    <div class="col-auto">
-        <a class="btn btn-primary my-2" role="button" href="{{route('tasks.create')}}">Tambah Task</a>
-    </div>
-</div> --}}
-
-
     <table class="table table-hover">
         <thead>
             <tr class="table-warning">
@@ -120,4 +114,53 @@
 
         </tbody>
     </table>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="tambahTask" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="tambahTaskLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tambahTaskLabel">Tambah Task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{{ route('tasks.store') }}" >
+                    @csrf
+                    <input type="text" class="form-control" name="id" value="{{$project['id']}}" hidden>
+                    {{-- {!! Form::text('project_id', {{$project['id']}}) !!} --}}
+                    <div class="form-group">
+                        <label for="nama"><b>Nama</b></label>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Task">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama"><b>Keterangan</b></label>
+                        <textarea type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan Singkat" rows="2"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="tanggal_mulai"><b>Tanggal Mulai</b></label>
+                            <div class="input-group date">
+                                <input placeholder="Tanggal mulai" type="text" class="form-control datepicker" name="tanggal_mulai">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tanggal_target"><b>Tanggal Target</b></label>
+                            <div class="input-group date">
+                                <input placeholder="Target Selesai" type="text" class="form-control datepicker" name="tanggal_target">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-block">Simpan</button>
+                        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

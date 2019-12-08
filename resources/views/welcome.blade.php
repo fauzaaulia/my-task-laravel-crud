@@ -47,6 +47,9 @@
             .title {
                 font-size: 84px;
             }
+            .subtitle {
+                font-size: 34px;
+            }
 
             .links > a {
                 color: #636b6f;
@@ -80,6 +83,7 @@
             @endif
 
             <div class="content">
+                <div class="subtitle">The first time using Laravel and Heroku</div>
                 <div class="title m-b-md">
                     My Taks with Heroku
                 </div>

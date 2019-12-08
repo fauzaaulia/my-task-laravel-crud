@@ -22,6 +22,7 @@
         <form method="post" action="{{ route('tasks.store') }}" >
             @csrf
             <input type="text" class="form-control" name="id" value="1">
+            {!! Form::text('project_id', 1) !!}
             <div class="form-group">
                 <label for="nama"><b>Nama</b></label>
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Task">
