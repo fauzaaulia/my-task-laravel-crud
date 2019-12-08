@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<h1 class="my-4">Project</h1>
+<h1 class="my-4">List Projects</h1>
 
     <div class="row justify-content-between">
         <div class="col-auto mr-auto">
