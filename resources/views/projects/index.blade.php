@@ -12,6 +12,7 @@
         </div>
     </div>
 
+<div class="table-responsive">
     <table class="table table-hover">
         <thead>
             <tr class="table-warning">
@@ -43,4 +44,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

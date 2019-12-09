@@ -73,6 +73,7 @@
 
 <hr>
 
+<div class="table-responsive">
     <table class="table table-hover">
         <thead>
             <tr class="table-warning">
@@ -114,7 +115,7 @@
 
         </tbody>
     </table>
-
+</div>
 
 
 <!-- Modal -->

@@ -4,8 +4,8 @@
 
 <h1 class="my-4 text-center">Create New Task</h1>
 
-<div class="row justify-content-center">
-    <div class="col-6">
+<div class="row justify-content-md-center">
+    <div class="col-md-auto">
 
             @if ($errors->any())
             <div class="alert alert-danger">

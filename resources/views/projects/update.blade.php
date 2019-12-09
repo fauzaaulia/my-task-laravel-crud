@@ -14,8 +14,10 @@
     </div>
 @endif
 
-<div class="row justify-content-center">
-    <div class="col-6">
+<a class="btn btn-outline-primary my-2" role="button" href="{{ url()->previous() }}">Kembali</a>
+
+<div class="row justify-content-md-center">
+    <div class="col-md-auto">
         <form method="post" action="{{ route('projects.update',$project['id']) }}" >
             @method('put')
             @csrf
