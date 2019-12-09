@@ -126,7 +126,10 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
+        $task = Task::with('project_id', $id);
         $project = Project::find($id);
+
+        $task->delete();
         $project->delete();
 
         return redirect()->back();
