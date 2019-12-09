@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Task;
 use App\Project;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
@@ -126,10 +127,9 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $task = Task::with('project_id', $id);
         $project = Project::find($id);
+        $task = DB::table('tasks')->where('project_id', $id)->delete();
 
-        $task->delete();
         $project->delete();
 
         return redirect()->back();
